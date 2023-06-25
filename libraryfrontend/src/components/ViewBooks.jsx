@@ -9,7 +9,7 @@ const ViewBooks = () => {
     const [singleVal,setSingleVal] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:3008/view")
+        axios.get("/api/view")
         .then((res)=>{
             console.log(res.data)
             setBooks(res.data)
@@ -18,7 +18,7 @@ const ViewBooks = () => {
     },[])
     const deleteValue = (id) =>{
         console.log(id);
-        axios.delete('http://localhost:3008/deletebooks/'+id)
+        axios.delete('/api/deletebooks/'+id)
         .then((res)=>{
             alert("deleted")
             window.location.reload(false)

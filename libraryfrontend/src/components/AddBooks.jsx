@@ -16,7 +16,7 @@ console.log(inp)
     const addInput = ()=>{
         console.log(inp)
         if(props.method=='post'){
-            axios.post("http://localhost:3008/create",inp)
+            axios.post("/api/create",inp)
         .then((res)=>{
             alert('data saved')
             navigate('/')
@@ -25,7 +25,7 @@ console.log(inp)
         setInp({BookName:'',author:'',language:'',genre:'',bookNum:''})
         }
         if(props.method=='put'){
-            axios.put('http://localhost:3008/edit/'+inp._id,inp
+            axios.put('/api/edit/'+inp._id,inp
             )
             .then((res)=>{
                 alert('Updated')
